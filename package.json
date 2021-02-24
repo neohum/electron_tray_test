@@ -1,0 +1,50 @@
+{
+  "name": "tray",
+  "version": "1.0.0",
+  "description": "tray",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "deploy": "electron-builder --windows nsis:x64"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.3.0",
+    "electron-builder": "^22.9.1"
+  },
+  "build": {
+    "productName": "productTest",
+    "appId": "kr.co.productTest.www",
+    "asar": true,
+    "protocols": {
+      "name": "productTest",
+      "schemes": [
+        "productTest"
+      ]
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "./resources/installer/Icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false,
+      "installerLanguages": [
+        "en_US",
+        "ko_KR"
+      ],
+      "language": "1042"
+    },
+    "directories": {
+      "buildResources": "resources/installer/",
+      "output": "build/",
+      "app": "."
+    }
+  }
+}
